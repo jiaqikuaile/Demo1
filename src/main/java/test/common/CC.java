@@ -10,7 +10,7 @@ public class CC {
 	            for (StackTraceElement traceElement : traceElements) {
 	                traceBuilder.append(traceElement.toString());
 	                traceBuilder.append("\n");
-	            }
+	            }   //
 	        }
 	 
 	        return traceBuilder.toString();
