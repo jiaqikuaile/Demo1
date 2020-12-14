@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MacCore>
+	<!-- 全局配置部分： 自动报备服务邮件配置 -->
+	<operationLevel>PD</operationLevel>		<!-- QA/PD -->
+	<monitorLevel>0</monitorLevel>			<!-- 0/1/2/3 	作业监控/数据异常处理 级别  -->
+	<analyseEnable>false</analyseEnable>	<!-- true/false: 日运营统计作业 -->
+	<startDate>20201209</startDate>			<!-- 生产环境置空: 缺省系统时间当天回溯24小时 -->
+	<endDate>20201210</endDate>				<!-- 生产环境置空: 缺省系统时间当天 -->
+	<startTime>080000</startTime>
+	<endTime>080000</endTime>
+
+	<!-- QA Version mail receiver -->
+	<QAReceiver>
+		<contacter name="饶佳琪" mailAdr="jia-qi.rao@mail.foxconn.com" sendType="TO"></contacter>
+
+		<contacter name="饶佳琪" mailAdr="13662582643@163.com" sendType="CC"></contacter>
+		<contacter name="饶佳琪" mailAdr="1753706447@qq.com" sendType="CC"></contacter>
+	</QAReceiver>
+	
+</MacCore>

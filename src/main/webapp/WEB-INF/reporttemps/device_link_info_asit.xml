@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DeviceLinkSpec>
+<!-- 售后服务补报备机型配置文件：
+2017.11.24 完成IQY/YouKu补报备，覆盖：
+ 机型管控更新 + 上架状态无效 + 漏上架机型
+
+-->
+
+	<!-- 补报备 天虎优酷机型 -->
+	<!-- <deviceLink seq="01" device="LCD-50TX55A">
+		<baseModel>LCD-50TX55A</baseModel>					
+		<contentProvider>YouKu</contentProvider>		
+		<superViser>CIBN</superViser>				
+		<send2FLNet>true</send2FLNet>				
+		<launchType>Taitum1.0</launchType>		
+		<romVersion>none</romVersion>			
+		<itemCode>2</itemCode>						
+		<confStatus>valid</confStatus>				
+	</deviceLink>
+	
+	<deviceLink seq="02" device="LCD-70MY5100A">
+		<baseModel>LCD-70SU570A</baseModel>					
+		<contentProvider>YouKu</contentProvider>		
+		<superViser>CIBN</superViser>					
+		<send2FLNet>true</send2FLNet>					
+		<launchType>Taitum1.0</launchType>					
+		<romVersion>?</romVersion>					
+		<itemCode>2</itemCode>
+		<confStatus>valid</confStatus>						
+	</deviceLink>
+	
+	<deviceLink seq="03" device="LCD-50MY5100A">
+		<baseModel>LCD-50SU570A</baseModel>					
+		<contentProvider>YouKu</contentProvider>		
+		<superViser>CIBN</superViser>					
+		<send2FLNet>true</send2FLNet>					
+		<launchType>Taitum1.0</launchType>					
+		<romVersion>?</romVersion>					
+		<itemCode>2</itemCode>	
+		<confStatus>valid</confStatus>					
+	</deviceLink>
+
+	补报备 天虎爱奇艺机型
+	<deviceLink seq="1" device="LCD-70SU775A">
+		<baseModel>none</baseModel>			
+		<contentProvider>IQY</contentProvider>		
+		<superViser>YinHe</superViser>				
+		<send2FLNet>true</send2FLNet>				
+		<launchType>Taitum1.0</launchType>			
+		<romVersion>?</romVersion>					
+		<itemCode>3</itemCode>
+		<confStatus>valid</confStatus>						
+	</deviceLink>
+	
+	<deviceLink seq="2" device="LCD-60SU775A">
+		<baseModel>LCD-60SU770A</baseModel>			
+		<contentProvider>IQY</contentProvider>		
+		<superViser>YinHe</superViser>				
+		<send2FLNet>true</send2FLNet>				
+		<launchType>Taitum1.0</launchType>			
+		<romVersion>?</romVersion>					
+		<itemCode>3</itemCode>
+		<confStatus>valid</confStatus>						
+	</deviceLink>
+	
+	<deviceLink seq="3" device="LCD-70SU875A">
+		<baseModel>none</baseModel>			
+		<contentProvider>IQY</contentProvider>		
+		<superViser>YinHe</superViser>				
+		<send2FLNet>true</send2FLNet>				
+		<launchType>Taitum1.0</launchType>			
+		<romVersion>?</romVersion>					
+		<itemCode>3</itemCode>	
+		<confStatus>valid</confStatus>					
+	</deviceLink>
+	
+	<deviceLink seq="4" device="LCD-60SU875A">
+		<baseModel>LCD-60SU870A</baseModel>			
+		<contentProvider>IQY</contentProvider>		
+		<superViser>YinHe</superViser>				
+		<send2FLNet>true</send2FLNet>				
+		<launchType>Taitum1.0</launchType>			
+		<romVersion>?</romVersion>					
+		<itemCode>3</itemCode>	
+		<confStatus>valid</confStatus>					
+	</deviceLink>
+	
+	<deviceLink seq="5" device="LCD-70SU570A">
+		<baseModel>none</baseModel>					
+		<contentProvider>IQY</contentProvider>		
+		<superViser>YinHe</superViser>				
+		<send2FLNet>true</send2FLNet>				
+		<launchType>Taitum1.0</launchType>			
+		<romVersion>?</romVersion>					
+		<itemCode>3</itemCode>	
+		<confStatus>valid</confStatus>					
+	</deviceLink>
+	
+	<deviceLink seq="6" device="LCD-70SU678A">
+		<baseModel>LCD-70SU676A</baseModel>			
+		<contentProvider>IQY</contentProvider>		
+		<superViser>YinHe</superViser>				
+		<send2FLNet>true</send2FLNet>				
+		<launchType>Taitum1.0</launchType>			
+		<romVersion>?</romVersion>					
+		<itemCode>3</itemCode>		
+		<confStatus>valid</confStatus>				
+	</deviceLink>
+	
+	<deviceLink seq="7" device="LCD-50SU575A">
+		<baseModel>LCD-50SU570A</baseModel>			
+		<contentProvider>IQY</contentProvider>		
+		<superViser>YinHe</superViser>				
+		<send2FLNet>true</send2FLNet>				
+		<launchType>Taitum1.0</launchType>			
+		<romVersion>?</romVersion>					
+		<itemCode>3</itemCode>	
+		<confStatus>valid</confStatus>					
+	</deviceLink>
+	
+	<deviceLink seq="8" device="LCD-70SU575A">
+		<baseModel>LCD-70SU570A</baseModel>			
+		<contentProvider>IQY</contentProvider>		
+		<superViser>YinHe</superViser>				
+		<send2FLNet>true</send2FLNet>				
+		<launchType>Taitum1.0</launchType>			
+		<romVersion>?</romVersion>					
+		<itemCode>3</itemCode>	
+		<confStatus>valid</confStatus>					
+	</deviceLink>
+	
+	<deviceLink seq="9" device="LCD-65SU671A">
+		<baseModel>none</baseModel>					
+		<contentProvider>IQY</contentProvider>		
+		<superViser>YinHe</superViser>				
+		<send2FLNet>true</send2FLNet>				
+		<launchType>Taitum1.5</launchType>			
+		<romVersion>?</romVersion>					
+		<itemCode>3</itemCode>	
+		<confStatus>valid</confStatus>					
+	</deviceLink>
+	
+	<deviceLink seq="10" device="LCD-80X818A">
+		<baseModel>none</baseModel>					
+		<contentProvider>IQY</contentProvider>		
+		<superViser>YinHe</superViser>				
+		<send2FLNet>true</send2FLNet>				
+		<launchType>Taitum1.0</launchType>			
+		<romVersion>?</romVersion>					
+		<itemCode>3</itemCode>	
+		<confStatus>valid</confStatus>					
+	</deviceLink>
+	
+	
+	<deviceLink seq="11" device="LCD-58SU671A">
+		<baseModel>none</baseModel>					
+		<contentProvider>IQY</contentProvider>		
+		<superViser>YinHe</superViser>				
+		<send2FLNet>true</send2FLNet>				
+		<launchType>Taitum1.5</launchType>			
+		<romVersion>?</romVersion>					
+		<itemCode>3</itemCode>	
+		<confStatus>valid</confStatus>					
+	</deviceLink>
+	
+	<deviceLink seq="12" device="LCD-60SU876A">
+		<baseModel>LCD-60SU875A</baseModel>			
+		<contentProvider>IQY</contentProvider>		
+		<superViser>YinHe</superViser>				
+		<send2FLNet>true</send2FLNet>				
+		<launchType>Taitum1.0</launchType>			
+		<romVersion>？</romVersion>					
+		<itemCode>3</itemCode>	
+		<confStatus>valid</confStatus>					
+	</deviceLink>
+	
+	<deviceLink seq="13" device="LCD-60SU575A">
+		<baseModel>LCD-60SU570A</baseModel>			
+		<contentProvider>IQY</contentProvider>		
+		<superViser>YinHe</superViser>				
+		<send2FLNet>true</send2FLNet>				
+		<launchType>Taitum1.0</launchType>			
+		<romVersion>?</romVersion>					
+		<itemCode>3</itemCode>	
+		<confStatus>valid</confStatus>					
+	</deviceLink>
+	
+	<deviceLink seq="14" device="LCD-50SU671A">
+		<baseModel>none</baseModel>					
+		<contentProvider>IQY</contentProvider>		
+		<superViser>YinHe</superViser>				
+		<send2FLNet>true</send2FLNet>				
+		<launchType>Taitum1.5</launchType>			
+		<romVersion>?</romVersion>					
+		<itemCode>3</itemCode>
+		<confStatus>valid</confStatus>						
+	</deviceLink>
+	
+	<deviceLink seq="15" device="LCD-70SU876A">
+		<baseModel>LCD-70SU875A</baseModel>			
+		<contentProvider>IQY</contentProvider>		
+		<superViser>YinHe</superViser>				
+		<send2FLNet>true</send2FLNet>				
+		<launchType>Taitum1.0</launchType>			
+		<romVersion>?</romVersion>					
+		<itemCode>3</itemCode>	
+		<confStatus>valid</confStatus>					
+	</deviceLink>
+	
+	<deviceLink seq="16" device="LCD-60TX4100A">
+		<baseModel>LCD-60SU470A</baseModel>			
+		<contentProvider>IQY</contentProvider>		
+		<superViser>YinHe</superViser>				
+		<send2FLNet>true</send2FLNet>				
+		<launchType>Taitum1.0</launchType>			
+		<romVersion>?</romVersion>					
+		<itemCode>3</itemCode>		
+		<confStatus>valid</confStatus>				
+	</deviceLink>
+	
+	<deviceLink seq="17" device="LCD-60SU678A">
+		<baseModel>LCD-60SU676A</baseModel>			
+		<contentProvider>IQY</contentProvider>		
+		<superViser>YinHe</superViser>				
+		<send2FLNet>true</send2FLNet>				
+		<launchType>Taitum1.0</launchType>			
+		<romVersion>?</romVersion>					
+		<itemCode>3</itemCode>	
+		<confStatus>valid</confStatus>					
+	</deviceLink>
+	
+	<deviceLink seq="18" device="LCD-70SU578A">
+		<baseModel>LCD-70SU570A</baseModel>			
+		<contentProvider>IQY</contentProvider>		
+		<superViser>YinHe</superViser>				
+		<send2FLNet>true</send2FLNet>				
+		<launchType>Taitum1.0</launchType>			
+		<romVersion>?</romVersion>					
+		<itemCode>3</itemCode>		
+		<confStatus>valid</confStatus>				
+	</deviceLink>
+	
+	<deviceLink seq="19" device="LCD-60SU578A">
+		<baseModel>LCD-60SU570A</baseModel>			
+		<contentProvider>IQY</contentProvider>		
+		<superViser>YinHe</superViser>				
+		<send2FLNet>true</send2FLNet>				
+		<launchType>Taitum1.0</launchType>			
+		<romVersion>?</romVersion>					
+		<itemCode>3</itemCode>	
+		<confStatus>valid</confStatus>					
+	</deviceLink>
+	
+	<deviceLink seq="20" device="LCD-50SU578">
+		<baseModel>LCD-50SU570A</baseModel>			
+		<contentProvider>IQY</contentProvider>		
+		<superViser>YinHe</superViser>				
+		<send2FLNet>true</send2FLNet>				
+		<launchType>Taitum1.0</launchType>			
+		<romVersion>?</romVersion>					
+		<itemCode>3</itemCode>	
+		<confStatus>valid</confStatus>					
+	</deviceLink>
+	
+	<deviceLink seq="21" device="LCD-45SF478A">
+		<baseModel>LCD-45SF475A</baseModel>			
+		<contentProvider>IQY</contentProvider>		
+		<superViser>YinHe</superViser>				
+		<send2FLNet>true</send2FLNet>				
+		<launchType>Taitum1.0</launchType>			
+		<romVersion>?</romVersion>					
+		<itemCode>3</itemCode>
+		<confStatus>valid</confStatus>						
+	</deviceLink>
+	
+	<deviceLink seq="22" device="LCD-60SU478A">
+		<baseModel>LCD-60SU475A</baseModel>			
+		<contentProvider>IQY</contentProvider>		
+		<superViser>YinHe</superViser>				
+		<send2FLNet>true</send2FLNet>				
+		<launchType>Taitum1.0</launchType>			
+		<romVersion>?</romVersion>					
+		<itemCode>3</itemCode>	
+		<confStatus>valid</confStatus>					
+	</deviceLink>
+	
+	<deviceLink seq="23" device="LCD-58SU672A">
+		<baseModel>LCD-58SU671A</baseModel>			
+		<contentProvider>IQY</contentProvider>		
+		<superViser>YinHe</superViser>				
+		<send2FLNet>true</send2FLNet>				
+		<launchType>Taitum1.5</launchType>			
+		<romVersion>?</romVersion>					
+		<itemCode>3</itemCode>	
+		<confStatus>valid</confStatus>					
+	</deviceLink>
+	
+	<deviceLink seq="24" device="LCD-58SU772A">
+		<baseModel>LCD-58SU672A</baseModel>			
+		<contentProvider>IQY</contentProvider>		
+		<superViser>YinHe</superViser>				
+		<send2FLNet>true</send2FLNet>				
+		<launchType>Taitum1.5</launchType>			
+		<romVersion>?</romVersion>					
+		<itemCode>3</itemCode>	
+		<confStatus>valid</confStatus>					
+	</deviceLink>
+	
+	<deviceLink seq="25" device="LCD-65SU672A">
+		<baseModel>LCD-65SU671A</baseModel>			
+		<contentProvider>IQY</contentProvider>		
+		<superViser>YinHe</superViser>				
+		<send2FLNet>true</send2FLNet>				
+		<launchType>Taitum1.5</launchType>			
+		<romVersion>?</romVersion>					
+		<itemCode>3</itemCode>	
+		<confStatus>valid</confStatus>					
+	</deviceLink>
+	
+	<deviceLink seq="26" device="LCD-65SU772A">
+		<baseModel>LCD-65SU672A</baseModel>			
+		<contentProvider>IQY</contentProvider>		
+		<superViser>YinHe</superViser>				
+		<send2FLNet>true</send2FLNet>				
+		<launchType>Taitum1.5</launchType>			
+		<romVersion>?</romVersion>					
+		<itemCode>3</itemCode>	
+		<confStatus>valid</confStatus>					
+	</deviceLink>
+	
+	2017.11.15  更新机型管控表，新增5款爱奇艺三期机型
+	<deviceLink seq="27" device="LCD-45SF470A">
+		<baseModel>none</baseModel>			
+		<contentProvider>IQY</contentProvider>		
+		<superViser>YinHe</superViser>				
+		<send2FLNet>true</send2FLNet>				
+		<launchType>Taitum1.0</launchType>			
+		<romVersion>?</romVersion>					
+		<itemCode>3</itemCode>	
+		<confStatus>valid</confStatus>					
+	</deviceLink>
+	
+	<deviceLink seq="28" device="LCD-60SU470A">
+		<baseModel>none</baseModel>			
+		<contentProvider>IQY</contentProvider>		
+		<superViser>YinHe</superViser>				
+		<send2FLNet>true</send2FLNet>				
+		<launchType>Taitum1.0</launchType>			
+		<romVersion>?</romVersion>					
+		<itemCode>3</itemCode>	
+		<confStatus>valid</confStatus>					
+	</deviceLink>
+
+	<deviceLink seq="29" device="LCD-45SF475A">
+		<baseModel>none</baseModel>			
+		<contentProvider>IQY</contentProvider>		
+		<superViser>YinHe</superViser>				
+		<send2FLNet>true</send2FLNet>				
+		<launchType>Taitum1.0</launchType>			
+		<romVersion>?</romVersion>					
+		<itemCode>3</itemCode>		
+		<confStatus>valid</confStatus>				
+	</deviceLink> 
+	
+	<deviceLink seq="30" device="LCD-60SU475A">
+		<baseModel>none</baseModel>			
+		<contentProvider>IQY</contentProvider>		
+		<superViser>YinHe</superViser>				
+		<send2FLNet>true</send2FLNet>				
+		<launchType>Taitum1.0</launchType>			
+		<romVersion>?</romVersion>					
+		<itemCode>3</itemCode>	
+		<confStatus>valid</confStatus>					
+	</deviceLink> 
+	
+	<deviceLink seq="31" device="LCD-45SF476A">
+		<baseModel>none</baseModel>			
+		<contentProvider>IQY</contentProvider>		
+		<superViser>YinHe</superViser>				
+		<send2FLNet>true</send2FLNet>				
+		<launchType>Taitum1.0</launchType>			
+		<romVersion>?</romVersion>					
+		<itemCode>3</itemCode>	
+		<confStatus>valid</confStatus>					
+	</deviceLink> 
+
+	2017.11.20  补充遗漏机型管控表中爱奇艺三期机型 
+	<deviceLink seq="32" device="LCD-70SX970A">
+		<baseModel>none</baseModel>					
+		<contentProvider>IQY</contentProvider>		
+		<superViser>YinHe</superViser>				
+		<send2FLNet>true</send2FLNet>				
+		<launchType>Taitum1.0</launchType>			
+		<romVersion>?</romVersion>					
+		<itemCode>3</itemCode>	
+		<confStatus>valid</confStatus>					
+	</deviceLink>
+	
+	<deviceLink seq="33" device="LCD-50SU570A">
+		<baseModel>none</baseModel>					
+		<contentProvider>IQY</contentProvider>		
+		<superViser>YinHe</superViser>				
+		<send2FLNet>true</send2FLNet>				
+		<launchType>Taitum1.0</launchType>			
+		<romVersion>?</romVersion>					
+		<itemCode>3</itemCode>	
+		<confStatus>valid</confStatus>					
+	</deviceLink> -->
+	
+	<deviceLink seq="27" device="LCD-45SF470A">
+		<baseModel>none</baseModel>			
+		<contentProvider>IQY</contentProvider>		
+		<superViser>YinHe</superViser>				
+		<send2FLNet>true</send2FLNet>				
+		<launchType>Taitum1.0</launchType>			
+		<romVersion>?</romVersion>					
+		<itemCode>3</itemCode>	
+		<confStatus>valid</confStatus>					
+	</deviceLink>
+		 
+</DeviceLinkSpec>

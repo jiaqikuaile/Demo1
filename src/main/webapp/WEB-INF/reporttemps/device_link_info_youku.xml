@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DeviceLinkSpec>
+<!-- 自动报备全机型清单：富可视+天虎机型+酒店机 -->
+<!-- 
+天虎机种一般期数判断逻辑： 
+一期：ROM装APK， 二期：ROM装SDK Victor， 三期：ROM装SDK Taitum 
+
+富可视: 	一期（JiMu1.0 - Taitum变种ROM）
+
+爱奇艺: 	一期（APK）、二期（Victor）、三期（Taitum）
+优酷: 	一期（APK）、二期（Taitum）
+BST: 	二期（Taitum）
+
+酒店机: 	无期数（联合视界 or 欧维克）
+-->
+
+	<deviceLink seq="1" device="LCD-50TX55A">
+		<baseModel>LCD-50TX55A</baseModel>					
+		<contentProvider>YouKu</contentProvider>		
+		<superViser>CIBN</superViser>				
+		<send2FLNet>true</send2FLNet>				
+		<launchType>Taitum1.0</launchType>		
+		<romVersion>none</romVersion>			
+		<itemCode>2</itemCode>						
+		<confStatus>valid</confStatus>				
+	</deviceLink>
+	
+	<deviceLink seq="2" device="LCD-70MY5100A">
+		<baseModel>LCD-70SU570A</baseModel>					
+		<contentProvider>YouKu</contentProvider>		
+		<superViser>CIBN</superViser>					
+		<send2FLNet>true</send2FLNet>					
+		<launchType>Taitum1.0</launchType>					
+		<romVersion>?</romVersion>					
+		<itemCode>2</itemCode>
+		<confStatus>valid</confStatus>						
+	</deviceLink>
+	
+	<deviceLink seq="3" device="LCD-50MY5100A">
+		<baseModel>LCD-50SU570A</baseModel>					
+		<contentProvider>YouKu</contentProvider>		
+		<superViser>CIBN</superViser>					
+		<send2FLNet>true</send2FLNet>					
+		<launchType>Taitum1.0</launchType>					
+		<romVersion>?</romVersion>					
+		<itemCode>2</itemCode>	
+		<confStatus>valid</confStatus>					
+	</deviceLink>
+	
+	<!--以下为因为附件命名重复而需要补报备的机型  -->	
+	
+	
+</DeviceLinkSpec>

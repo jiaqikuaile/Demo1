@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="test.macdao.MysqlDao">
+   
+   
+   <resultMap type="test.macentity.ScenarioDefinedModel" id="scenario">
+    <result property="id" column="ID"/>
+    <result property="subjectId" column="SUBJECT_ID"/>
+    <result property="mailConfigId" column="MAIL_CONFIG_ID"/>
+    <result property="identifyCode" column="IDENTIFY_CODE"/>
+    <result property="classPath" column="CLASS_PATH"/>
+    <result property="remark" column="REMARK"/>
+    <result property="status" column="STATUS"/>
+    <result property="createTime" column="CREATE_TIME"/>
+    <result property="modifyTime" column="MODIFY_TIME"/>
+   </resultMap>
+   
+   <resultMap type="test.macentity.Subject" id="subject">
+   <result property="id" column="ID"/>
+    <result property="mailSubject" column="MAIL_SUBJECT"/>
+    <result property="subjectContent" column="SUBJECT_CONTENT"/>
+    <result property="status" column="STATUS"/>
+    <result property="remark" column="REMARK"/>
+    
+   </resultMap>
+    <select id="findByIdentiftCode"  parameterType="java.lang.String" resultType="test.macentity.ScenarioDefinedModel">
+           
+       select  ID as id,SUBJECT_ID as subjectId,MAIL_CONFIG_ID as mailConfigId,IDENTIFY_CODE as identifyCode,CLASS_PATH as classPath,
+REMARK as remark ,STATUS as status ,CREATE_TIME as createTime ,MODIFY_TIME as modifyTime from 
+  RT_SCENARIO_DEFINED 
+       where  IDENTIFY_CODE=#{code}
+    </select>
+    
+    <select id="findByIdSelectSubject" parameterType="java.lang.String" resultMap="subject">
+       select *  from RT_MAIL_SUBJECT
+       where id=#{id}
+    </select>
+    
+    <select id="findModel" parameterType="java.lang.String" resultType="java.lang.String">
+       SELECT B.MODEL  FROM RT_SCENARIO_DEVICE_LINK A LEFT JOIN RT_DEVICE_RECEIVER_LINK B
+       ON A.DEVICE_ID=B.ID WHERE  A.SCENARIO_ID=#{scenId} AND B.MODEL IN 
+       
+        <if test="model!=null and model.length>0">
+          <foreach collection="model" 
+                 open="(" close=")"
+                 separator="," item="item">
+                 #{item}
+           </foreach>
+        </if>
+       
+
+    </select>
+    
+        <select id="findMailServer" parameterType="java.lang.String" resultType="test.macentity.MailService">
+       select SMTP_HOST as host,SMTP_USER as username,SMTP_PASS as pass  from MAIL_SERVICE 
+       where id=#{serviceId}
+    </select>
+</mapper> 

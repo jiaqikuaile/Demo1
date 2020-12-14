@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans default-lazy-init="true"
+    xmlns="http://www.springframework.org/schema/beans" 
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xmlns:task="http://www.springframework.org/schema/task"   
+    xsi:schemaLocation="  
+       http://www.springframework.org/schema/beans   
+       http://www.springframework.org/schema/beans/spring-beans-4.3.xsd  
+       http://www.springframework.org/schema/mvc   
+       http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd   
+       http://www.springframework.org/schema/tx   
+       http://www.springframework.org/schema/tx/spring-tx-4.3.xsd   
+       http://www.springframework.org/schema/context  
+       http://www.springframework.org/schema/context/spring-context-4.3.xsd
+       http://www.springframework.org/schema/task
+       http://www.springframework.org/schema/task/spring-task-4.3.xsd">  
+
+    <context:component-scan base-package="test.*" />
+       
+  
+    <!-- 引入属性文件 -->
+    <context:property-placeholder location="classpath:jdbc2.properties" />
+<!-- spring mvc 注解及类型转换 -->
+    <mvc:annotation-driven />
+	
+	<!--datesource1-->
+	<bean name="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
+       <property name="driverClassName" value="${jdbc.driver}" />
+        <property name="url" value="${jdbc.url}" />
+        <property name="username" value="${jdbc.username}" />
+        <property name="password" value="${jdbc.password}" />
+        <!-- 初始化连接大小 -->
+        <property name="initialSize" value="0" />
+        <!-- 连接池最大使用连接数量 -->
+        <property name="maxActive" value="20" />
+        <!-- 连接池最大空闲 
+        <property name="maxIdle" value="20" />-->
+        <!-- 连接池最小空闲 -->
+        <property name="minIdle" value="0" />
+        <!-- 获取连接最大等待时间 -->
+        <property name="maxWait" value="60000" />
+    </bean> 
+	
+	<bean name="dataSource2" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
+       <property name="driverClassName" value="${jdbc1.driver}" />
+        <property name="url" value="${jdbc1.url}" />
+        <property name="username" value="${jdbc1.username}" />
+        <property name="password" value="${jdbc1.password}" />
+        <!-- 初始化连接大小 -->
+        <property name="initialSize" value="0" />
+        <!-- 连接池最大使用连接数量 -->
+        <property name="maxActive" value="20" />
+        <!-- 连接池最大空闲 
+        <property name="maxIdle" value="20" />-->
+        <!-- 连接池最小空闲 -->
+        <property name="minIdle" value="0" />
+        <!-- 获取连接最大等待时间 -->
+        <property name="maxWait" value="60000" />
+    </bean> 
+	
+	
+<!-- spring和MyBatis完美整合，不需要mybatis的配置映射文件 -->  
+        <bean id="qzj_sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">  
+            <property name="dataSource" ref="dataSource" />  
+            <!-- 自动扫描mapping.xml文件 -->  
+            <property name="mapperLocations" value="classpath*:issspMappers/*.xml"></property>  
+        </bean>  
+	<!-- DAO接口所在包名，Spring会自动查找其下的类 -->  
+        <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer" id="qzj_sqlSessionFactory1">  
+            <property name="basePackage" value="test.issspdao" />  
+            <property name="sqlSessionFactoryBeanName" value="qzj_sqlSessionFactory"></property>  
+        </bean>  
+		
+		
+		
+		
+	 <bean id="mypt_sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">  
+            <property name="dataSource" ref="dataSource2" />  
+            <!-- 自动扫描mapping.xml文件 -->  
+            <property name="mapperLocations" value="classpath*:macMappers/*.xml"></property>  
+        </bean>  	
+		<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer" id="mypt_sqlSessionFactory1">  
+            <property name="basePackage" value="test.macdao" />  
+            <property name="sqlSessionFactoryBeanName" value="mypt_sqlSessionFactory"></property>  
+        </bean>  
+		
+	
+	 <!-- (事务管理)transaction manager, use JtaTransactionManager for global tx -->  
+        <bean id="transactionManager"  
+            class="org.springframework.jdbc.datasource.DataSourceTransactionManager">  
+            <property name="dataSource" ref="dataSource" />  
+        </bean> 
+        
+        	 <!-- (事务管理)transaction manager, use JtaTransactionManager for global tx -->  
+        <bean id="transactionManager2"  
+            class="org.springframework.jdbc.datasource.DataSourceTransactionManager">  
+            <property name="dataSource" ref="dataSource2" />  
+        </bean> 
+	
+	
+	<!-- 配置双事务扫描 -->
+
+	<!-- 配置 Annotation 驱动，扫描@Transactional注解的类定义事务  -->
+	<tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true"/>
+	
+	<!-- finebi数据库 20170727  配置 Annotation 驱动，扫描@Transactional注解的类定义事务  -->
+	<tx:annotation-driven transaction-manager="transactionManager2" proxy-target-class="true"/>
+
+       <!-- 定时任务 -->
+   <!-- 定时任务 -->
+   <!-- 定时任务 -->
+
+ <!-- 定时器开关--> 
+    <task:annotation-driven scheduler="qbScheduler" mode="proxy"/>
+    <task:scheduler id="qbScheduler" pool-size="100"/>
+
+
+
+</beans>

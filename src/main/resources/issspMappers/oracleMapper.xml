@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="test.issspdao.OracleDao">
+
+    
+    <select id="findModel"  resultType="java.lang.String" parameterType="java.lang.String">
+       select distinct MACHINE_MODEL_NO  from JS5_S12_MACHINE_SERIAL@ISSSP_MAC
+       where mbmac is not null and shipping_model = 1
+       and to_date(last_modify_date,'yyyyMMddHH24miss') > to_date(#{startDate},'yyyyMMddHH24miss') 
+       and to_date(last_modify_date,'yyyyMMddHH24miss') <![CDATA[ <= ]]> to_date(#{endDate},'yyyyMMddHH24miss') 
+    </select>
+    
+       <select id="findModelData"  resultType="test.macentity.ModelData">
+       select a.create_date as createDate, a.macfactory_id as macfactoryId, a.exw_date as exwDate, a.machine_model_no as machineModelNo,
+       a.memebership as memebership, a.machine_serial_no as machineSerialNo, a.mbmac as mbmac,wifimac as wifimac, a.emmcid as emmcid, a.hardware_model as hardwareModel,
+       a.shipping_model as shippingModel,a.upload_date as uploadDate, a.content_supplier as contentSupplier,
+       b.CDG1306_CODE as Cdg1306Code, b.CDG1306_NAME as Cdg1306Name, b.CDG1201_CODE as Cdg1201Code, b.CDG1201_NAME as Cdg1201Name
+       from JS5_S12_MACHINE_SERIAL@ISSSP_MAC a left join JS5_S12_MACHINE_MODEL@ISSSP_MAC b 
+       on a.MACHINE_MODEL_NO =  b.MACHINE_MODEL_NO where
+       to_date(a.last_modify_date,'yyyyMMddHH24miss')>to_date(#{startDate},'yyyyMMddHH24miss') 
+       and to_date(a.last_modify_date,'yyyyMMddHH24miss')<![CDATA[ <= ]]>to_date(#{endDate},'yyyyMMddHH24miss')
+       and a.mbmac is not null
+       and a.shipping_model = 1
+       and a.machine_model_no in
+         <if test="ids!=null and ids.length>0">
+          <foreach collection="ids" 
+                 open="(" close=")"
+                 separator="," item="item">
+                 #{item}
+           </foreach>
+        </if>
+       
+       
+     
+    </select>
+    
+      <select id="findModelDataString"  resultType="java.lang.String" >
+       select distinct a.MACHINE_MODEL_NO
+       from JS5_S12_MACHINE_SERIAL@ISSSP_MAC a left join JS5_S12_MACHINE_MODEL@ISSSP_MAC b 
+       on a.MACHINE_MODEL_NO =  b.MACHINE_MODEL_NO where
+       to_date(a.last_modify_date,'yyyyMMddHH24miss')>to_date(#{startDate},'yyyyMMddHH24miss') 
+       and to_date(a.last_modify_date,'yyyyMMddHH24miss')<![CDATA[ < ]]>to_date(#{endDate},'yyyyMMddHH24miss')
+       and a.mbmac is not null
+       and a.shipping_model = 1
+       and a.machine_model_no in
+         <if test="ids!=null and ids.length>0">
+          <foreach collection="ids" 
+                 open="(" close=")"
+                 separator="," item="item">
+                 #{item}
+           </foreach>
+        </if>
+       
+     
+    </select>
+    
+</mapper> 
